@@ -58,9 +58,9 @@ class GNGEdge{
     }
     
     func updateScene() {
-        let height = sqrt(powf(from.SceneNode.position.x - to.SceneNode.position.x, 2) + powf(from.SceneNode.position.y - to.SceneNode.position.y , 2) + powf(from.SceneNode.position.z - to.SceneNode.position.z , 2))
-    
         let geo = self.geometryNode.geometry as! SCNCylinder
+        
+        let height = sqrt(powf(from.SceneNode.position.x - to.SceneNode.position.x, 2) + powf(from.SceneNode.position.y - to.SceneNode.position.y , 2) + powf(from.SceneNode.position.z - to.SceneNode.position.z , 2))
         geo.height = CGFloat(height)
         
         var beta = acosf((to.SceneNode.position.y-from.SceneNode.position.y)/height)

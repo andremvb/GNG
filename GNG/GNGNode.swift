@@ -14,7 +14,7 @@ class GNGNode: Hashable{
     var error: Float = 0     //Error
     var SceneNode : SCNNode
     var clases = [Int]()
-    var render: Bool
+    var rendered: Bool
     
     var vector: Point //Wk
     
@@ -26,7 +26,7 @@ class GNGNode: Hashable{
         self.id = GNGNode.counter
         vector = point
         GNGNode.counter += 1
-        self.render = false
+        self.rendered = false
         
     }
     
@@ -48,11 +48,6 @@ class GNGNode: Hashable{
             }
         }
         return maxClas
-    }
-    
-
-    func trainClass(pos:Int){
-        
     }
     
     static func == (lhs: GNGNode, rhs: GNGNode) -> Bool {

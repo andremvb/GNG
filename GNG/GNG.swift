@@ -23,11 +23,9 @@ class GNG{
         graph.connect(from: node1, to: node2, withEdge: GNGEdge(node1,node2))
     }
     
-    func initTrain(numClases:Int){
+    func initClassification(numClases:Int){
         for node in graph.container{
-            for _ in 0..<numClases{
-                node.vertex.clases.append(0)
-            }
+            node.vertex.clases = Array(repeating: 0, count: numClases)
         }
     }
     
@@ -171,6 +169,15 @@ class GNG{
             }
         }
         return (u!,v!)
+    }
+    
+    func updateScene(){
+        for entry in self.graph.container{
+            entry.vertex.updateScene()
+            for (_, (_, edge)) in entry.edges{
+                edge.updateScene()
+            }
+        }
     }
     
 }

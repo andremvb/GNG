@@ -16,7 +16,8 @@ struct Parameters{
     let Ew:Float = 0.05
     let En:Float = 0.0006
     let beta:Float = 0.0005
-    let maxIteraciones = 20000
+//    let maxIteraciones = 50000
+    let maxIteraciones = 50000
     var numIteraciones = 1
     
 }

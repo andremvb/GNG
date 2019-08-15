@@ -11,60 +11,137 @@ import SceneKit
 import SpriteKit
 import CoreGraphics
 
-class GameViewController: UIViewController {
+class GNGViewController: UIViewController {
 
+    enum AlgorithmState{
+        case training, classifing, none, drawing
+    }
+    
     var scnView: SCNView!
     var scnScene: SCNScene!
     var cameraNode: SCNNode!
     var spawnTime: TimeInterval = 0
 
-    
-    var train:Bool = true
-    var classificar:Bool = false
     var counterClass:Int = 0
-    var gng = GNG(dimension: 2)
-    var data = Data()
+    var gng: GNG
+    var data: Data
+    
+    let progressView = UIProgressView(progressViewStyle: .bar)
+    let labelProgress = UILabel(frame: .zero)
+    var state: AlgorithmState = .none {
+        didSet{
+            DispatchQueue.main.async {
+                switch self.state {
+                case .none:
+                    self.labelProgress.isHidden = true
+                    self.progressView.isHidden = true
+                case .classifing:
+                    self.labelProgress.isHidden = false
+                    self.progressView.isHidden = false
+                    self.labelProgress.text = "Classifing"
+                case .training:
+                    self.labelProgress.isHidden = false
+                    self.progressView.isHidden = false
+                    self.labelProgress.text = "Training"
+                case .drawing:
+                    self.labelProgress.isHidden = false
+                    self.progressView.isHidden = false
+                    self.labelProgress.text = "Drawing"
+                }
+            }
+        }
+    }
+    
+    var progress: Float = 0{
+        didSet{
+            DispatchQueue.main.async {
+                self.progressView.setProgress(self.progress, animated: true)
+            }
+        }
+    }
+    
+    fileprivate func drawData() {
+        //Draw Data
+        let radioData: CGFloat = 0.1
+        for _ in 0..<self.data.numData{
+            let (point, _) = self.data.readPointProgressive()
+            let node = SCNNode(geometry: SCNSphere(radius: radioData))
+            node.position = SCNVector3(point)
+            self.scnScene.rootNode.addChildNode(node)
+        }
+    }
+    
+    ///Entrenar
+    fileprivate func train() {
+        self.state = .training
+        while(self.gng.parameters.numIteraciones < self.gng.parameters.maxIteraciones){
+            self.progress = Float(self.gng.parameters.numIteraciones) / Float(self.gng.parameters.maxIteraciones)
+            self.gng.iteration(input: self.data.readPoint().point)
+        }
+        self.state = .drawing
+        self.drawtrain()
+        self.state = .none
+    }
+    
+    fileprivate func classify() {
+        //Clasificar
+        if let numClasses = data.classes{
+            self.state = .classifing
+            self.gng.initClassification(numClases: numClasses)
+            for _ in 0..<self.data.numData{
+                let (point, clas) = self.data.readPointProgressive()
+                self.gng.trainClass(data: point, clase: clas)
+            }
+            self.state = .drawing
+            self.drawClassification()
+            self.state = .none
+        }
+    }
+    
+    init(data: Data) {
+        self.gng = GNG(dimension: data.dimension)
+        self.data = data
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    deinit {
+        print("GNG deinitilized")
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         
         setupView()
         setupScene()
         setupCamera()
+        setupProgress()
         
-        //Leer la data
-        let path = Bundle.main.path(forResource: "spiral", ofType:"txt")!
-        let url = URL(fileURLWithPath: path)
-        let fileContent = try? String(contentsOf: url, encoding: .utf8)
-        readData(file: fileContent! as String,indexClass: 2)
+        scnView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
         
-        
-////////COMENTAR///////
-        
-        //Entrenar
-        while(gng.parameters.numIteraciones < gng.parameters.maxIteraciones){
-            gng.iteration(input: data.readPoint().point)
+        DispatchQueue.global(qos: .background).async {
+            self.drawData()
+            self.train()
+            self.classify()
         }
-        classificar = true
-        gng.initTrain(numClases: 3)
-        drawtrain()
-        
-        //Clasificar
-        gng.initTrain(numClases: 3)
-        for _ in 0..<data.numData{
-            let (point, clas) = data.readPointProgressive()
-            let node = SCNNode(geometry: SCNSphere(radius: 0.1))
-            node.position = SCNVector3(point)
-            scnScene.rootNode.addChildNode(node)
-            gng.trainClass(data: point, clase: clas)
-        }
-        drawClassification()
-        
     }
     
     func setupView(){
-        scnView = self.view as? SCNView
+        //Set sceneView and constraints
+        scnView = SCNView() 
+        view.addSubview(scnView)
+        view.backgroundColor = .black
+        scnView.backgroundColor = .black
+        scnView.translatesAutoresizingMaskIntoConstraints = false
+        scnView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        scnView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        scnView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+        scnView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+        
+        //Set some variables
         scnView.showsStatistics = true
         scnView.allowsCameraControl = true
         scnView.autoenablesDefaultLighting = true
@@ -82,11 +159,30 @@ class GameViewController: UIViewController {
         cameraNode.position = SCNVector3(20, 20, 50)
         scnScene.rootNode.addChildNode(cameraNode)
     }
-
-    func handleTap(gestureRecognize: UIGestureRecognizer) {
-        // retrieve the SCNView
-        let scnView = self.view as! SCNView
+    
+    fileprivate func setupProgress() {
+        view.addSubview(progressView)
+        progressView.progressTintColor = .lightGray
+        progressView.trackTintColor = .darkGray
+        progressView.translatesAutoresizingMaskIntoConstraints = false
+        progressView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30).isActive = true
+        progressView.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        progressView.heightAnchor.constraint(equalToConstant: 10).isActive = true
+        progressView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        progressView.layer.cornerRadius = 5
+        progressView.layer.masksToBounds = true
         
+        view.addSubview(labelProgress)
+        labelProgress.textColor = .white
+        labelProgress.textAlignment = .center
+        labelProgress.translatesAutoresizingMaskIntoConstraints = false
+        labelProgress.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        labelProgress.font = UIFont.systemFont(ofSize: 12, weight: .bold)
+        labelProgress.topAnchor.constraint(equalTo: progressView.bottomAnchor, constant: 5).isActive = true
+        
+    }
+
+    @objc func handleTap(gestureRecognize: UIGestureRecognizer) {
         // check what nodes are tapped
         let p = gestureRecognize.location(in: scnView)
         let hitResults = scnView.hitTest(p, options: nil)
@@ -94,31 +190,27 @@ class GameViewController: UIViewController {
         if hitResults.count > 0 {
             // retrieved the first clicked object
             let result: AnyObject! = hitResults[0]
-            
+
             // get its material
             let material = result.node!.geometry!.firstMaterial!
-            
+
             // highlight it
             SCNTransaction.begin()
-//            SCNTransaction.setAnimationDuration(0.5)
+
             SCNTransaction.animationDuration = 0.5
-            
-            // on completion - unhighlight
-//            SCNTransaction
-            
+
             SCNTransaction.completionBlock = {
                 SCNTransaction.begin()
                 SCNTransaction.animationDuration = 0.5
                 material.emission.contents = UIColor.black
                 SCNTransaction.commit()
             }
-            
+
             material.emission.contents = UIColor.red
-            
+
             SCNTransaction.commit()
         }
     }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -126,33 +218,14 @@ class GameViewController: UIViewController {
         // Release any cached data, images, etc that aren't in use.
     }
     
-    func readData(file:String,indexClass:Int){
-        let dataLine = file.components(separatedBy: "\r\n")
-        for line in dataLine{
-            if line != ""{
-                let arrayLine = line.components(separatedBy: "\t")
-                var classMember:Int?
-                var dataArray = [Float]()
-                for (index,unitData) in arrayLine.enumerated(){
-                    if(index == indexClass){
-                        
-                        classMember = Int(unitData)!
-                    }else{
-                        dataArray.append(Float(unitData)!)
-                    }
-                }
-                data.insert(data: dataArray, clase: classMember!)
-            }
-        }
-    }
-    
     func drawtrain( ) {
+        gng.updateScene()
         //Imprimir Nodos
         var counterNodos:Int = 0
         for entry in gng.graph.container{
-            if (entry.vertex.render == false){
+            if (entry.vertex.rendered == false){
                 scnScene.rootNode.addChildNode(entry.vertex.SceneNode)
-                entry.vertex.render = true
+                entry.vertex.rendered = true
             }else{
 //                let action = SCNAction.moveTo(entry.vertex.SceneNode.position, duration: 0)
 //                entry.vertex.SceneNode.runAction(action)
@@ -186,11 +259,9 @@ class GameViewController: UIViewController {
     }
     
     func drawClassification(){
+        gng.updateScene()
         for entry in gng.graph.container{
-            entry.vertex.updateScene()
-            for (_, (_, edge)) in entry.edges{
-                edge.updateScene()
-            }
+            
             switch entry.vertex.finalClass(){
             case 0:
                 entry.vertex.SceneNode.geometry!.materials.first?.diffuse.contents = UIColor.blue
@@ -205,10 +276,10 @@ class GameViewController: UIViewController {
     }
 }
 
-extension GameViewController: SCNSceneRendererDelegate {
+extension GNGViewController: SCNSceneRendererDelegate {
     
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
-
+        
         //Entrenar
 //        if(gng.parameters.numIteraciones >= gng.parameters.maxIteraciones){
 //            train = false

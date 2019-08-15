@@ -14,6 +14,15 @@ struct OneData{
 }
 
 class Data {
+    
+    init(dimension: Int, classes: Int?) {
+        self.dimension = dimension
+        self.classes = classes
+    }
+    
+    let dimension: Int
+    let classes: Int?
+        
     var numData:UInt32 = 0
     private var data = [OneData]()
     private var counter:Int = 0
@@ -37,6 +46,7 @@ class Data {
         return (point, oneData.clase)
     }
     
+    //Leer progresivamente
     private func readProgressive() -> OneData{
         if(counter >= data.count - 1){
             counter = 0
@@ -46,6 +56,7 @@ class Data {
         return data[counter]
     }
     
+    //Leer randomicamente
     private func read() -> OneData{
         let randNum = Int(arc4random_uniform(numData))
         return data[randNum]
