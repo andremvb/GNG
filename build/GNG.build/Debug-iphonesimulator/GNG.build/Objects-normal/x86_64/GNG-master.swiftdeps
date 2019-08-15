@@ -1,0 +1,16 @@
+version: "Apple Swift version 2.1.1 (swiftlang-700.1.101.15 clang-700.1.81)"
+options: "ecb33684356b4802afbd49af6431bcb0"
+build_time: [516996703, 826177000]
+inputs:
+  "/Users/Andre/Swift/GNG/GNG/Graph.swift": [515748458, 0]
+  "/Users/Andre/Swift/GNG/GNG/Data.swift": [515749418, 0]
+  "/Users/Andre/Swift/GNG/GNG/Generator.swift": [515618091, 0]
+  "/Users/Andre/Swift/GNG/Entry.swift": [515598815, 0]
+  "/Users/Andre/Swift/GNG/GNG/GNG.swift": [515748297, 0]
+  "/Users/Andre/Swift/GNG/GNG/GNGNode.swift": [515749903, 0]
+  "/Users/Andre/Swift/GNG/GNG/AppDelegate.swift": [515597222, 0]
+  "/Users/Andre/Swift/GNG/GNG/GameViewController.swift": [516996291, 0]
+  "/Users/Andre/Swift/GNG/GNG/Point.swift": [515614718, 0]
+  "/Users/Andre/Swift/GNG/GNG/Parameters.swift": [516996703, 0]
+  "/Users/Andre/Swift/GNG/GNG/Codigo Prueba.swift": [515750464, 0]
+  "/Users/Andre/Swift/GNG/GNG/GNGEdge.swift": [515747075, 0]

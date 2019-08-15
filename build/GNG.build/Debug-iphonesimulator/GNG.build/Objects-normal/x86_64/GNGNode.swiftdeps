@@ -1,0 +1,348 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "GNGNode"
+- "=="
+provides-nominal:
+- "C3GNG7GNGNode"
+provides-member:
+- ["C3GNG7GNGNode", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- "Bool"
+- !private "SCNVector3"
+- "GNGNode"
+- "Float"
+- !private "BooleanLiteralType"
+- !private "+="
+- "Int"
+- "Point"
+- "=="
+- "SCNNode"
+- !private "SCNSphere"
+- "Hashable"
+- !private "<"
+depends-member:
+- !private ["PSs9AnyObject", "GNGNode"]
+- ["PSs9AnyObject", "Int"]
+- !private ["PSs9AnyObject", "SCNNode"]
+- !private ["PSs9AnyObject", "SCNSphere"]
+- !private ["PSs9AnyObject", "SCNVector3"]
+- !private ["PSs9AnyObject", "SceneNode"]
+- !private ["PSs9AnyObject", "_vector"]
+- !private ["PSs9AnyObject", "clases"]
+- !private ["PSs9AnyObject", "counter"]
+- ["PSs9AnyObject", "hashValue"]
+- !private ["PSs9AnyObject", "id"]
+- !private ["PSs9AnyObject", "init"]
+- !private ["PSs9AnyObject", "position"]
+- !private ["PSs9AnyObject", "render"]
+- !private ["PSs9AnyObject", "x"]
+- !private ["PSs9AnyObject", "y"]
+- !private ["PSs9AnyObject", "z"]
+- ["PSs9AnyObject", ""]
+- !private ["Sa", "Generator"]
+- !private ["Sa", "Index"]
+- !private ["Sa", "_Element"]
+- !private ["Sa", "enumerate"]
+- ["Sa", "init"]
+- !private ["PSs23ArrayLiteralConvertible", "Generator"]
+- !private ["PSs23ArrayLiteralConvertible", "Index"]
+- !private ["PSs23ArrayLiteralConvertible", "_Element"]
+- !private ["PSs23ArrayLiteralConvertible", "enumerate"]
+- ["PSs23ArrayLiteralConvertible", "init"]
+- !private ["PSs22BidirectionalIndexType", "Distance"]
+- !private ["PSs22BidirectionalIndexType", "IntegerLiteralType"]
+- !private ["PSs21BitwiseOperationsType", "Distance"]
+- !private ["PSs21BitwiseOperationsType", "IntegerLiteralType"]
+- !private ["Sb", "_getBuiltinLogicValue"]
+- !private ["PSs25BooleanLiteralConvertible", "_getBuiltinLogicValue"]
+- !private ["PSs11BooleanType", "_getBuiltinLogicValue"]
+- !private ["V12CoreGraphics7CGFloat", "deinit"]
+- !private ["PSs11CVarArgType", "Distance"]
+- !private ["PSs11CVarArgType", "IntegerLiteralType"]
+- !private ["PSs11CVarArgType", "init"]
+- !private ["PSs11CVarArgType", "position"]
+- !private ["PSs14CollectionType", "Generator"]
+- !private ["PSs14CollectionType", "Index"]
+- !private ["PSs14CollectionType", "_Element"]
+- !private ["PSs14CollectionType", "enumerate"]
+- ["PSs14CollectionType", "init"]
+- !private ["PSs10Comparable", "Distance"]
+- !private ["PSs10Comparable", "IntegerLiteralType"]
+- !private ["PSs28CustomDebugStringConvertible", "Generator"]
+- !private ["PSs28CustomDebugStringConvertible", "Index"]
+- !private ["PSs28CustomDebugStringConvertible", "_Element"]
+- !private ["PSs28CustomDebugStringConvertible", "enumerate"]
+- ["PSs28CustomDebugStringConvertible", "init"]
+- !private ["PSs23CustomStringConvertible", "Distance"]
+- !private ["PSs23CustomStringConvertible", "Generator"]
+- !private ["PSs23CustomStringConvertible", "Index"]
+- !private ["PSs23CustomStringConvertible", "IntegerLiteralType"]
+- !private ["PSs23CustomStringConvertible", "_Element"]
+- !private ["PSs23CustomStringConvertible", "_getBuiltinLogicValue"]
+- !private ["PSs23CustomStringConvertible", "enumerate"]
+- ["PSs23CustomStringConvertible", "init"]
+- !private ["PSs23CustomStringConvertible", "position"]
+- !private ["VSs18EnumerateGenerator", "Element"]
+- !private ["VSs17EnumerateSequence", "Generator"]
+- !private ["PSs9Equatable", "Distance"]
+- !private ["PSs9Equatable", "GNGNode"]
+- ["PSs9Equatable", "Int"]
+- !private ["PSs9Equatable", "IntegerLiteralType"]
+- !private ["PSs9Equatable", "SCNNode"]
+- !private ["PSs9Equatable", "SCNSphere"]
+- !private ["PSs9Equatable", "SCNVector3"]
+- !private ["PSs9Equatable", "SceneNode"]
+- !private ["PSs9Equatable", "_getBuiltinLogicValue"]
+- !private ["PSs9Equatable", "_vector"]
+- !private ["PSs9Equatable", "clases"]
+- !private ["PSs9Equatable", "counter"]
+- ["PSs9Equatable", "hashValue"]
+- !private ["PSs9Equatable", "id"]
+- !private ["PSs9Equatable", "init"]
+- !private ["PSs9Equatable", "position"]
+- !private ["PSs9Equatable", "render"]
+- ["PSs9Equatable", ""]
+- !private ["PSs16ForwardIndexType", "Distance"]
+- !private ["PSs16ForwardIndexType", "IntegerLiteralType"]
+- ["C3GNG7GNGNode", "Bool"]
+- ["C3GNG7GNGNode", "Float"]
+- !private ["C3GNG7GNGNode", "GNGNode"]
+- ["C3GNG7GNGNode", "Int"]
+- ["C3GNG7GNGNode", "Point"]
+- ["C3GNG7GNGNode", "SCNNode"]
+- !private ["C3GNG7GNGNode", "SCNSphere"]
+- !private ["C3GNG7GNGNode", "SCNVector3"]
+- ["C3GNG7GNGNode", "SceneNode"]
+- !private ["C3GNG7GNGNode", "_vector"]
+- ["C3GNG7GNGNode", "clases"]
+- ["C3GNG7GNGNode", "counter"]
+- ["C3GNG7GNGNode", "deinit"]
+- ["C3GNG7GNGNode", "error"]
+- ["C3GNG7GNGNode", "finalClass"]
+- ["C3GNG7GNGNode", "hashValue"]
+- ["C3GNG7GNGNode", "id"]
+- ["C3GNG7GNGNode", "init"]
+- ["C3GNG7GNGNode", "render"]
+- ["C3GNG7GNGNode", "trainClass"]
+- ["C3GNG7GNGNode", "update"]
+- ["C3GNG7GNGNode", "vector"]
+- !private ["PSs13GeneratorType", "Element"]
+- !private ["PSs8Hashable", "Distance"]
+- !private ["PSs8Hashable", "GNGNode"]
+- ["PSs8Hashable", "Int"]
+- !private ["PSs8Hashable", "IntegerLiteralType"]
+- !private ["PSs8Hashable", "SCNNode"]
+- !private ["PSs8Hashable", "SCNSphere"]
+- !private ["PSs8Hashable", "SCNVector3"]
+- !private ["PSs8Hashable", "SceneNode"]
+- !private ["PSs8Hashable", "_getBuiltinLogicValue"]
+- !private ["PSs8Hashable", "_vector"]
+- !private ["PSs8Hashable", "clases"]
+- !private ["PSs8Hashable", "counter"]
+- ["PSs8Hashable", "hashValue"]
+- !private ["PSs8Hashable", "id"]
+- !private ["PSs8Hashable", "init"]
+- !private ["PSs8Hashable", "position"]
+- !private ["PSs8Hashable", "render"]
+- ["PSs8Hashable", ""]
+- !private ["PSs9Indexable", "Generator"]
+- !private ["PSs9Indexable", "Index"]
+- !private ["PSs9Indexable", "_Element"]
+- !private ["PSs9Indexable", "enumerate"]
+- ["PSs9Indexable", "init"]
+- !private ["VSs17IndexingGenerator", "Element"]
+- !private ["Si", "Distance"]
+- !private ["Si", "IntegerLiteralType"]
+- !private ["PSs21IntegerArithmeticType", "Distance"]
+- !private ["PSs21IntegerArithmeticType", "IntegerLiteralType"]
+- !private ["PSs25IntegerLiteralConvertible", "Distance"]
+- !private ["PSs25IntegerLiteralConvertible", "IntegerLiteralType"]
+- !private ["PSs11IntegerType", "Distance"]
+- !private ["PSs11IntegerType", "IntegerLiteralType"]
+- !private ["PSs14MirrorPathType", "Distance"]
+- !private ["PSs14MirrorPathType", "IntegerLiteralType"]
+- !private ["PSs21MutableCollectionType", "Generator"]
+- !private ["PSs21MutableCollectionType", "Index"]
+- !private ["PSs21MutableCollectionType", "_Element"]
+- !private ["PSs21MutableCollectionType", "enumerate"]
+- ["PSs21MutableCollectionType", "init"]
+- !private ["PSs16MutableIndexable", "Generator"]
+- !private ["PSs16MutableIndexable", "Index"]
+- !private ["PSs16MutableIndexable", "_Element"]
+- !private ["PSs16MutableIndexable", "enumerate"]
+- ["PSs16MutableIndexable", "init"]
+- !private ["PSs16MutableSliceable", "Generator"]
+- !private ["PSs16MutableSliceable", "Index"]
+- !private ["PSs16MutableSliceable", "_Element"]
+- !private ["PSs16MutableSliceable", "enumerate"]
+- ["PSs16MutableSliceable", "init"]
+- !private ["PSo8NSCoding", "init"]
+- !private ["PSo8NSCoding", "position"]
+- !private ["PSo9NSCopying", "init"]
+- !private ["PSo9NSCopying", "position"]
+- !private ["CSo8NSObject", "init"]
+- !private ["CSo8NSObject", "position"]
+- !private ["PSo16NSObjectProtocol", "init"]
+- !private ["PSo16NSObjectProtocol", "position"]
+- !private ["PSo14NSSecureCoding", "init"]
+- !private ["PSo14NSSecureCoding", "position"]
+- !private ["Sq", "deinit"]
+- !private ["C3GNG5Point", "x"]
+- !private ["C3GNG5Point", "y"]
+- !private ["C3GNG5Point", "z"]
+- !private ["PSs21RandomAccessIndexType", "Distance"]
+- !private ["PSs21RandomAccessIndexType", "IntegerLiteralType"]
+- !private ["PSs30RangeReplaceableCollectionType", "Generator"]
+- !private ["PSs30RangeReplaceableCollectionType", "Index"]
+- !private ["PSs30RangeReplaceableCollectionType", "_Element"]
+- !private ["PSs30RangeReplaceableCollectionType", "enumerate"]
+- ["PSs30RangeReplaceableCollectionType", "init"]
+- !private ["PSo13SCNActionable", "init"]
+- !private ["PSo13SCNActionable", "position"]
+- !private ["PSo13SCNAnimatable", "init"]
+- !private ["PSo13SCNAnimatable", "position"]
+- !private ["PSo17SCNBoundingVolume", "init"]
+- !private ["PSo17SCNBoundingVolume", "position"]
+- !private ["CSo11SCNGeometry", "init"]
+- !private ["CSo7SCNNode", "init"]
+- !private ["CSo7SCNNode", "position"]
+- !private ["PSo11SCNShadable", "init"]
+- !private ["CSo9SCNSphere", "init"]
+- !private ["VSC10SCNVector3", "init"]
+- !private ["VSC10SCNVector3", "x"]
+- !private ["VSC10SCNVector3", "y"]
+- !private ["VSC10SCNVector3", "z"]
+- !private ["PSs12SequenceType", "Element"]
+- !private ["PSs12SequenceType", "Generator"]
+- !private ["PSs12SequenceType", "Index"]
+- !private ["PSs12SequenceType", "_Element"]
+- !private ["PSs12SequenceType", "enumerate"]
+- ["PSs12SequenceType", "init"]
+- !private ["PSs17SignedIntegerType", "Distance"]
+- !private ["PSs17SignedIntegerType", "IntegerLiteralType"]
+- !private ["PSs16SignedNumberType", "Distance"]
+- !private ["PSs16SignedNumberType", "IntegerLiteralType"]
+- !private ["PSs10Strideable", "Distance"]
+- !private ["PSs10Strideable", "IntegerLiteralType"]
+- !private ["PSs10_ArrayType", "Generator"]
+- !private ["PSs10_ArrayType", "Index"]
+- !private ["PSs10_ArrayType", "_Element"]
+- !private ["PSs10_ArrayType", "enumerate"]
+- ["PSs10_ArrayType", "init"]
+- !private ["PSs33_BuiltinBooleanLiteralConvertible", "_getBuiltinLogicValue"]
+- !private ["PSs33_BuiltinIntegerLiteralConvertible", "Distance"]
+- !private ["PSs33_BuiltinIntegerLiteralConvertible", "IntegerLiteralType"]
+- !private ["PSs24_DestructorSafeContainer", "Generator"]
+- !private ["PSs24_DestructorSafeContainer", "Index"]
+- !private ["PSs24_DestructorSafeContainer", "_Element"]
+- !private ["PSs24_DestructorSafeContainer", "enumerate"]
+- ["PSs24_DestructorSafeContainer", "init"]
+- !private ["PSs14_Incrementable", "Distance"]
+- !private ["PSs14_Incrementable", "IntegerLiteralType"]
+- !private ["PSs22_IntegerArithmeticType", "Distance"]
+- !private ["PSs22_IntegerArithmeticType", "IntegerLiteralType"]
+- !private ["PSs12_IntegerType", "Distance"]
+- !private ["PSs12_IntegerType", "IntegerLiteralType"]
+- !private ["PSs21_ObjectiveCBridgeable", "Distance"]
+- !private ["PSs21_ObjectiveCBridgeable", "Generator"]
+- !private ["PSs21_ObjectiveCBridgeable", "Index"]
+- !private ["PSs21_ObjectiveCBridgeable", "IntegerLiteralType"]
+- !private ["PSs21_ObjectiveCBridgeable", "_Element"]
+- !private ["PSs21_ObjectiveCBridgeable", "_getBuiltinLogicValue"]
+- !private ["PSs21_ObjectiveCBridgeable", "enumerate"]
+- ["PSs21_ObjectiveCBridgeable", "init"]
+- !private ["PSs22_RandomAccessAmbiguity", "Distance"]
+- !private ["PSs22_RandomAccessAmbiguity", "IntegerLiteralType"]
+- !private ["PSs12_Reflectable", "Distance"]
+- !private ["PSs12_Reflectable", "Generator"]
+- !private ["PSs12_Reflectable", "Index"]
+- !private ["PSs12_Reflectable", "IntegerLiteralType"]
+- !private ["PSs12_Reflectable", "_Element"]
+- !private ["PSs12_Reflectable", "_getBuiltinLogicValue"]
+- !private ["PSs12_Reflectable", "enumerate"]
+- ["PSs12_Reflectable", "init"]
+- !private ["PSs18_SignedIntegerType", "Distance"]
+- !private ["PSs18_SignedIntegerType", "IntegerLiteralType"]
+- !private ["PSs11_Strideable", "Distance"]
+- !private ["PSs11_Strideable", "IntegerLiteralType"]
+depends-nominal:
+- "PSs9AnyObject"
+- "Sa"
+- "PSs23ArrayLiteralConvertible"
+- !private "PSs22BidirectionalIndexType"
+- !private "PSs21BitwiseOperationsType"
+- !private "Sb"
+- !private "PSs25BooleanLiteralConvertible"
+- !private "PSs11BooleanType"
+- !private "V12CoreGraphics7CGFloat"
+- !private "PSs11CVarArgType"
+- "PSs14CollectionType"
+- !private "PSs10Comparable"
+- "PSs28CustomDebugStringConvertible"
+- "PSs23CustomStringConvertible"
+- !private "VSs18EnumerateGenerator"
+- !private "VSs17EnumerateSequence"
+- "PSs9Equatable"
+- !private "PSs16ForwardIndexType"
+- "C3GNG7GNGNode"
+- !private "PSs13GeneratorType"
+- "PSs8Hashable"
+- "PSs9Indexable"
+- !private "VSs17IndexingGenerator"
+- !private "Si"
+- !private "PSs21IntegerArithmeticType"
+- !private "PSs25IntegerLiteralConvertible"
+- !private "PSs11IntegerType"
+- !private "PSs14MirrorPathType"
+- "PSs21MutableCollectionType"
+- "PSs16MutableIndexable"
+- "PSs16MutableSliceable"
+- !private "PSo8NSCoding"
+- !private "PSo9NSCopying"
+- !private "CSo8NSObject"
+- !private "PSo16NSObjectProtocol"
+- !private "PSo14NSSecureCoding"
+- !private "Sq"
+- !private "C3GNG5Point"
+- !private "PSs21RandomAccessIndexType"
+- "PSs30RangeReplaceableCollectionType"
+- !private "PSo13SCNActionable"
+- !private "PSo13SCNAnimatable"
+- !private "PSo17SCNBoundingVolume"
+- !private "CSo11SCNGeometry"
+- !private "CSo7SCNNode"
+- !private "PSo11SCNShadable"
+- !private "CSo9SCNSphere"
+- !private "VSC10SCNVector3"
+- "PSs12SequenceType"
+- !private "PSs17SignedIntegerType"
+- !private "PSs16SignedNumberType"
+- !private "PSs10Strideable"
+- "PSs10_ArrayType"
+- !private "PSs33_BuiltinBooleanLiteralConvertible"
+- !private "PSs33_BuiltinIntegerLiteralConvertible"
+- "PSs24_DestructorSafeContainer"
+- !private "PSs14_Incrementable"
+- !private "PSs22_IntegerArithmeticType"
+- !private "PSs12_IntegerType"
+- "PSs21_ObjectiveCBridgeable"
+- !private "PSs22_RandomAccessAmbiguity"
+- "PSs12_Reflectable"
+- !private "PSs18_SignedIntegerType"
+- !private "PSs11_Strideable"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SceneKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/simd.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/GLKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SpriteKit.swiftmodule"
+interface-hash: "a30bae8edceff98b7194ab019d334b50"
